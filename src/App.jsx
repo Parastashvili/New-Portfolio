@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import topEclipse from "./assets/svg/eclipse.svg";
-import bottomEclipse from "./assets/svg/eclipse2.svg";
+import topEclipse from "./assets/svg/Eclipse.svg";
+import bottomEclipse from "./assets/svg/Eclipse2.svg";
 import Anime from "../components/Anime";
 import WhiteAsset from "./assets/svg/Sphere-White-Matte.svg";
 import BlueAsset from "./assets/svg/Pill-Blue-Glossy.svg";

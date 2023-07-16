@@ -1,10 +1,11 @@
-import React from "react";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import data from "../src/data/data";
 import "@splidejs/react-splide/css/skyblue";
 import { styled } from "styled-components";
 import next from "../src/assets/next.png";
 import prev from "../src/assets/prev.png";
+import "./SliderEdit.css";
+import React, { useState, useEffect } from "react";
 export default () => {
   const options = {
     type: "loop",
@@ -25,10 +26,19 @@ export default () => {
           {data.map((item) => (
             <SplideSlide key={item.id}>
               <Container className="projectOuterSlider">
-                <div className="projectInner">
+                <div
+                  className="projectInner"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "100%",
+                  }}
+                >
                   <div
                     style={{
-                      width: "auto",
+                      width: "100%",
+                      maxWidth: "350px",
                       height: "200px",
                       backgroundImage: `url(${item.img})`,
                       backgroundPosition: "center",
@@ -57,12 +67,8 @@ export default () => {
           ))}
         </SplideTrack>
         <div className="splide__arrows">
-          <button className="splide__arrow splide__arrow--next">
-            <img src={next} alt="next" />
-          </button>
-          <button className="splide__arrow splide__arrow--prev">
-            <img src={prev} alt="prev" />
-          </button>
+          <button className="splide__arrow splide__arrow--next"></button>
+          <button className="splide__arrow splide__arrow--prev"></button>
         </div>
       </div>
       <div className="splide__progress">
@@ -126,7 +132,7 @@ const Container = styled.div`
         gap: 10px;
         a {
           button {
-            background-color: #F59E0B ;
+            background-color: #f59e0b;
             border: 0px;
             border-radius: 3px;
             text-align: center;

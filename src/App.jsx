@@ -15,10 +15,10 @@ import Slider from "../components/Slider";
 function App() {
   const [text, setText] = useState("");
   const words = [
-    // "Frontend Engineer",
-    // "Web Designer",
-    // "Crypto Enthusiast",
-    // "Blockchain Enthusiast",
+    "Frontend Engineer",
+    "Web Designer",
+    "Crypto Enthusiast",
+    "Blockchain Enthusiast",
   ];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   useEffect(() => {

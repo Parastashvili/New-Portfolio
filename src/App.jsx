@@ -5,7 +5,7 @@ import Anime from "../components/Anime";
 import WhiteAsset from "./assets/svg/Sphere-White-Matte.svg";
 import BlueAsset from "./assets/svg/Pill-Blue-Glossy.svg";
 import YelloAsset from "./assets/svg/SuperToroid-Yellow-Glossy.svg";
-import MouseTracker from "../components/Mousetracker";
+// import MouseTracker from "../components/Mousetracker";
 import logo from "./assets/svg/logo.png";
 import BurgerMenu from "../components/Burger";
 import down from "./assets/svg/downl.gif";
@@ -97,7 +97,7 @@ function App() {
         <SectionHeader name="Tech Stack" />
         <SectionHeader name="Skills" />
         <SectionHeader name="About" />
-        {/* <Anime /> */}
+        <Anime />
       </Inner>
       {/* <MouseTracker /> */}
     </Main>

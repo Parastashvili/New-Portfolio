@@ -6,6 +6,8 @@ import next from "../src/assets/next.png";
 import prev from "../src/assets/prev.png";
 import "./SliderEdit.css";
 import React, { useState, useEffect } from "react";
+import link from "../src/assets/link.gif";
+import githubs from "../src/assets/githubs.gif";
 export default () => {
   const options = {
     type: "loop",
@@ -49,14 +51,20 @@ export default () => {
                     }}
                   >
                     <div className="hover">
-                      <h1 className="projectName">{item.name}</h1>
-                      <p className="projectDSC">{item.text}</p>
-                      <div className="buttonCont">
+                      <h1>{item.name}</h1>
+                      <p>{item.text}</p>
+                      <div>
                         <a href={item.githubLink} target="_blank">
-                          <button className="viewCodeBTN">Code</button>
+                          <button>
+                            Code
+                            <img src={githubs} alt="github logo" />
+                          </button>
                         </a>
                         <a href={item.liveLink} target="_blank">
-                          <button className="viewCodeBTN">Live Site</button>
+                          <button>
+                            Live Site
+                            <img src={link} alt="link logo" />
+                          </button>
                         </a>
                       </div>
                     </div>
@@ -99,8 +107,8 @@ const Container = styled.div`
       transition: all 1s ease-in-out;
       background: linear-gradient(
         90deg,
-        rgba(139, 92, 246, 0.9) 0%,
-        rgba(236, 72, 153, 0.9) 100%
+        rgba(255, 255, 0, 0.9) 0%,
+        rgba(255, 43, 43, 0.9) 100%
       );
       width: 100%;
       height: 100%;
@@ -119,7 +127,7 @@ const Container = styled.div`
       }
       h1 {
         font-size: 18px;
-        font-weight: 400;
+        font-weight: 700;
         letter-spacing: 0.03rem;
       }
       p {
@@ -132,7 +140,7 @@ const Container = styled.div`
         gap: 10px;
         a {
           button {
-            background-color: #f59e0b;
+            background-color: #ffffff;
             border: 0px;
             border-radius: 3px;
             text-align: center;
@@ -142,6 +150,16 @@ const Container = styled.div`
             font-size: 14px;
             font-weight: 600;
             letter-spacing: 0.02rem;
+            opacity: 0.8;
+            &:hover {
+              opacity: 1;
+              cursor: pointer;
+              scale: 1.05;
+            }
+            img {
+              width: 20px;
+              margin-left: 5px;
+            }
           }
         }
       }

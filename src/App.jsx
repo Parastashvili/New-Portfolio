@@ -12,6 +12,8 @@ import down from "./assets/svg/downl.gif";
 import SectionHeader from "../components/SectionHeader";
 import React, { useState, useEffect } from "react";
 import Slider from "../components/Slider";
+import Reveal from "../components/Reveal";
+import Techstack from "../components/TechStack";
 function App() {
   const [text, setText] = useState("");
   const words = [
@@ -68,36 +70,74 @@ function App() {
           alt="logo"
         />
         <Section>
-          <p className="first">Hi there! 👋 </p>{" "}
-          <p className="second">
-            I'm Levan Parastashvili, a <span className="frontend">{text}</span>{" "}
-            💻🌱{" "}
-          </p>
-          <p className="third">
-            I have a deep passion for coding and am always looking for new
-            challenges to improve my skills and knowledge. 🤓💪 I believe that
-            coding is not just a skill, but a mindset that allows me to solve
-            problems and create innovative solutions. My approach to coding is
-            to combine creativity and technical skills to deliver exceptional
-            results. 🚀💡 Feel free to explore my profile and projects, and
-            don't hesitate to get in touch with me for any collaboration or
-            discussion.
-          </p>
-          <Resume
-            href="https://drive.google.com/file/d/1jtirsBYt9rUPGcdlvG2-Fx-TMvKfL_s0/view"
-            target="_blank"
-          >
-            <p className="mobile">Download CV</p>
-            <p className="desktop">Let's make great things together! 🤝🌟</p>
-            <img className="download" src={down} alt="" />
-          </Resume>
+          <Reveal>
+            <p className="first">Hi there! 👋 </p>{" "}
+          </Reveal>
+          <Reveal>
+            <p className="second">
+              I'm Levan Parastashvili, a{" "}
+              <span className="frontend">{text}</span> 💻🌱{" "}
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="third">
+              I have a deep passion for coding and am always looking for new
+              challenges to improve my skills and knowledge. 🤓💪 I believe that
+              coding is not just a skill, but a mindset that allows me to solve
+              problems and create innovative solutions. My approach to coding is
+              to combine creativity and technical skills to deliver exceptional
+              results. 🚀💡 Feel free to explore my profile and projects, and
+              don't hesitate to get in touch with me for any collaboration or
+              discussion.
+            </p>
+          </Reveal>
+          <Reveal>
+            <Resume
+              href="https://drive.google.com/file/d/1jtirsBYt9rUPGcdlvG2-Fx-TMvKfL_s0/view"
+              target="_blank"
+            >
+              <p className="mobile">Download CV</p>
+              <p className="desktop">Let's make great things together! 🤝🌟</p>
+              <img className="download" src={down} alt="" />
+            </Resume>
+          </Reveal>
         </Section>
-        <SectionHeader name="Projects" />
+        <Reveal>
+          <SectionHeader name="Projects" />
+        </Reveal>
         <Slider />
-        <SectionHeader name="Tech Stack" />
-        <SectionHeader name="Skills" />
-        <SectionHeader name="About" />
-        <Anime />
+        <Reveal>
+          <SectionHeader name="Tech Stack" />
+        </Reveal>
+        <Tech>
+          <Techstack level={8} name="HTML5" />
+          <Techstack level={7} name="CSS3 / SASS / SCSS" />
+          <Techstack level={8} name="Styled Components" />
+          <Techstack level={5} name="Bootstrap & Tailwind" />
+          <Techstack level={7} name="Javascript (Vanilla)" />
+          <Techstack level={6} name="Typescript" />
+          <Techstack level={7} name="React" />
+          <Techstack level={6} name="jQuerry" />
+          <Techstack level={8} name="FlexBox Layout" />
+          <Techstack level={6} name="React Spring" />
+          <Techstack level={6} name="MUI" />
+          <Techstack level={6} name="Framer Motion" />
+          <Techstack level={7} name="Ant Desing" />
+          <Techstack level={7} name="Splide.js" />
+          <Techstack level={6} name="Grid Layout" />
+          <Techstack level={7} name="Git / Github" />
+          <Techstack level={5} name="Node.js" />
+          <Techstack level={5} name="Firebase" />
+        </Tech>
+        <Reveal>
+          <SectionHeader name="Skills" />
+        </Reveal>
+        <Reveal>
+          <SectionHeader name="About" />
+        </Reveal>
+        <Reveal>
+          <Anime />
+        </Reveal>
       </Inner>
       {/* <MouseTracker /> */}
     </Main>
@@ -216,29 +256,39 @@ const Section = styled.div`
   }
 `;
 const Resume = styled.a`
-  width: 120px;
+  width: 125px;
   height: 30px;
   border-radius: 4px;
-  background: linear-gradient(to right, #8b5cf6, #ec4899 100%);
+  background: linear-gradient(to right, #ffff00, #ff2b2b 100%);
   border: 0px;
   margin: 20px 0px;
   padding: 0 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    width: 130px;
+  }
   p {
-    color: #f9fafb;
+    color: #000000;
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
   }
   .desktop {
     display: none;
   }
   .download {
-    width: 20px;
+    width: 25px;
+  }
+`;
+const Tech = styled.div`
+  display: grid;
+  @media screen and (min-width: 550px) {
+    grid-template-columns: 1fr 1fr;
   }
 `;

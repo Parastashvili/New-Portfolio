@@ -125,7 +125,7 @@ const NavBar = styled.ul`
 `;
 const Contact = styled.div`
   margin-top: 10px;
-  background: linear-gradient(to right, #8b5cf6, #ec4899 100%);
+  background: linear-gradient(to right, #ffff00, #ff2b2b 100%);
   opacity: 0.8;
   border-radius: 5px;
   width: 100%;

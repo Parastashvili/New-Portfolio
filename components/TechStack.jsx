@@ -1,7 +1,9 @@
 import React from "react";
 import "./techstack.css";
 import { styled } from "styled-components";
-import Reveal from "./Reveal";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 export default function Techstack(props) {
   const divStyle = {
     width: `${props.level * 10}%`,
@@ -23,17 +25,23 @@ export default function Techstack(props) {
         <p className="nameText">{props.name}</p>
         <p className="levelText">{level}</p>
       </div>
-        <div className="sliderCont">
-          <input
-            type="range"
-            value={props.level}
-            className="slider"
-            step={1}
-            min={1}
-            max={10}
-          />
-          <div style={divStyle} className="filled"></div>
-        </div>
+      <div className="sliderCont">
+        <input
+          type="range"
+          value={props.level}
+          className="slider"
+          step={1}
+          min={1}
+          max={10}
+        />
+        <div
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          style={divStyle}
+          className="filled"
+        ></div>
+      </div>
     </Outer>
   );
 }
@@ -66,22 +74,26 @@ const Outer = styled.div`
   }
   .sliderCont {
     position: relative;
+    overflow: hidden;
+    border-radius: 5px;
     .filled {
       position: absolute;
-      top: 4px;
+      top: 3px;
+      left: 0;
       height: 10px;
       background: linear-gradient(to right, #ffff00, #ff2b2b 100%);
-      border-radius: 83px;
+      border-radius: 5px;
     }
     .slider {
       -webkit-appearance: none;
       width: 100%;
       height: 10px;
       outline: none;
-      background: #ffffff;
+      background: #fdfdfd;
       border-radius: 83px;
       cursor: pointer;
       opacity: 0.1;
+      border-radius: 5px;
     }
   }
 `;

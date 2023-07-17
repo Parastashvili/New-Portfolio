@@ -18,10 +18,15 @@ const BurgerMenu = () => {
         />
       </span>
       <NavBar className={isOpen ? "menu-items open" : "menu-items"}>
-        <li>Projects</li>
-        <li>Tech Stack</li>
-        <li>Skills</li>
-        <li>About</li>
+        <a href="#projects">
+          <li>Projects</li>
+        </a>
+        <a href="#tech">
+          <li>Tech Stack</li>
+        </a>
+        <a href="#about">
+          <li>About</li>
+        </a>
         <Contact>
           <ul>
             <li>
@@ -52,6 +57,9 @@ const BurgerMenu = () => {
 export default BurgerMenu;
 
 const Outer = styled.div`
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
   .icon {
     position: absolute;
     top: 0;

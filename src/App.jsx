@@ -122,51 +122,58 @@ function App() {
             </Resume>
           </Reveal>
         </Section>
-        <Reveal>
-          <SectionHeader name="Projects" />
-        </Reveal>
-        <Slider />
-        <Reveal>
-          <SectionHeader name="Tech Stack" />
-        </Reveal>
-        <Tech>
-          <Techstack level={8} name="HTML5" />
-          <Techstack level={7} name="CSS3 / SASS / SCSS" />
-          <Techstack level={8} name="Styled Components" />
-          <Techstack level={5} name="Bootstrap & Tailwind" />
-          <Techstack level={7} name="Javascript (Vanilla)" />
-          <Techstack level={6} name="Typescript" />
-          <Techstack level={7} name="React" />
-          <Techstack level={6} name="jQuerry" />
-          <Techstack level={8} name="FlexBox Layout" />
-          <Techstack level={6} name="React Spring" />
-          <Techstack level={6} name="MUI" />
-          <Techstack level={6} name="Framer Motion" />
-          <Techstack level={7} name="Ant Desing" />
-          <Techstack level={7} name="Splide.js" />
-          <Techstack level={6} name="Grid Layout" />
-          <Techstack level={7} name="Git / Github" />
-          <Techstack level={5} name="Node.js" />
-          <Techstack level={5} name="Firebase" />
-        </Tech>
-        <Reveal>
-          <SectionHeader name="About" />
-        </Reveal>
-        <About id="colorful-paragraph">
-          I transitioned from e-commerce category management to front-end
-          engineering, following my passion for development. In just one month,
-          I built multiple websites using HTML, CSS, and JavaScript, showcasing
-          my skills in page structure, responsive design, and Git collaboration.
-          I also created engaging games like Memory and Tic Tac Toe. I quickly
-          embraced CSS frameworks like Tailwind and Bootstrap, streamlining my
-          workflow and creating visually stunning user interfaces. I expanded my
-          knowledge with React and TypeScript, focusing on daily practice to
-          hone my skills and build a strong portfolio. As a passionate front-end
-          engineer, I'm driven to create intuitive, user-centric experiences.
-          With a solid foundation and a thirst for innovation, I'm eager to
-          contribute my expertise to dynamic and collaborative development
-          teams, crafting impactful web experiences.
-        </About>
+        <div id="projects">
+          <Reveal>
+            <SectionHeader name="Projects" />
+          </Reveal>
+          <Slider />
+        </div>
+        <div id="tech">
+          <Reveal>
+            <SectionHeader name="Tech Stack" />
+          </Reveal>
+          <Tech>
+            <Techstack level={8} name="HTML5" />
+            <Techstack level={7} name="CSS3 / SASS / SCSS" />
+            <Techstack level={8} name="Styled Components" />
+            <Techstack level={5} name="Bootstrap & Tailwind" />
+            <Techstack level={7} name="Javascript (Vanilla)" />
+            <Techstack level={6} name="Typescript" />
+            <Techstack level={7} name="React" />
+            <Techstack level={6} name="jQuerry" />
+            <Techstack level={8} name="FlexBox Layout" />
+            <Techstack level={6} name="React Spring" />
+            <Techstack level={6} name="MUI" />
+            <Techstack level={6} name="Framer Motion" />
+            <Techstack level={7} name="Ant Desing" />
+            <Techstack level={7} name="Splide.js" />
+            <Techstack level={6} name="Grid Layout" />
+            <Techstack level={7} name="Git / Github" />
+            <Techstack level={5} name="Node.js" />
+            <Techstack level={5} name="Firebase" />
+          </Tech>
+        </div>
+        <div id="about">
+          <Reveal>
+            <SectionHeader name="About" />
+          </Reveal>
+          <About id="colorful-paragraph">
+            I transitioned from e-commerce category management to front-end
+            engineering, following my passion for development. In just one
+            month, I built multiple websites using HTML, CSS, and JavaScript,
+            showcasing my skills in page structure, responsive design, and Git
+            collaboration. I also created engaging games like Memory and Tic Tac
+            Toe. I quickly embraced CSS frameworks like Tailwind and Bootstrap,
+            streamlining my workflow and creating visually stunning user
+            interfaces. I expanded my knowledge with React and TypeScript,
+            focusing on daily practice to hone my skills and build a strong
+            portfolio. As a passionate front-end engineer, I'm driven to create
+            intuitive, user-centric experiences. With a solid foundation and a
+            thirst for innovation, I'm eager to contribute my expertise to
+            dynamic and collaborative development teams, crafting impactful web
+            experiences.
+          </About>
+        </div>
         <Anime />
         <BurgerMenu />
       </Inner>
@@ -177,7 +184,6 @@ function App() {
 export default App;
 const Main = styled.div`
   width: 100%;
-  /* height: 100vh; */
   padding: 50px 0px;
   background-color: #121212;
   overflow: hidden;
@@ -185,6 +191,10 @@ const Main = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 1024px) {
+    height: 100vh;
+    padding: 0;
+  }
   .topEclipse {
     position: absolute;
     top: -300px;
@@ -222,7 +232,19 @@ const Inner = styled.div`
   );
   backdrop-filter: blur(15px);
   width: calc(100% - 60px);
-  /* height: calc(100vh - 60px); */
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    height: calc(100vh - 200px);
+    #projects {
+      display: none;
+    }
+    #tech {
+      display: none;
+    }
+    #about {
+      display: none;
+    }
+  }
   .logo {
     width: 40px;
     position: absolute;
@@ -252,6 +274,10 @@ const Section = styled.div`
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.1rem;
+    @media screen and (min-width: 1024px) {
+      font-size: 28px;
+      letter-spacing: 0.15rem;
+    }
   }
   .second {
     color: #f9fafb;
@@ -261,6 +287,10 @@ const Section = styled.div`
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.04rem;
+    @media screen and (min-width: 1024px) {
+      font-size: 24px;
+      letter-spacing: 0.1rem;
+    }
     .frontend {
       font-size: 18px;
       font-weight: 700;
@@ -274,6 +304,10 @@ const Section = styled.div`
       background-size: 200% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      @media screen and (min-width: 1024px) {
+        font-size: 24px;
+        letter-spacing: 0.1rem;
+      }
     }
   }
   .third {
@@ -284,6 +318,10 @@ const Section = styled.div`
     font-weight: 300;
     line-height: normal;
     letter-spacing: 0.02rem;
+    @media screen and (min-width: 1024px) {
+      font-size: 16px;
+      letter-spacing: 0.07rem;
+    }
   }
 `;
 const Resume = styled.a`
@@ -299,8 +337,15 @@ const Resume = styled.a`
   justify-content: space-evenly;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
+  @media screen and (min-width: 1024px) {
+    width: 350px;
+    height: 40px;
+  }
   &:hover {
     width: 130px;
+    @media screen and (min-width: 1024px) {
+      width: 370px;
+    }
   }
   p {
     color: #000000;
@@ -309,9 +354,21 @@ const Resume = styled.a`
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    @media screen and (min-width: 1024px) {
+      font-size: 14px;
+      letter-spacing: 0.07rem;
+    }
   }
   .desktop {
     display: none;
+    @media screen and (min-width: 1024px) {
+      display: block;
+    }
+  }
+  .mobile {
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
   }
   .download {
     width: 25px;

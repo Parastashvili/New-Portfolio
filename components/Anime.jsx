@@ -39,6 +39,6 @@ const Img = styled.img`
   width: 100%;
   max-width: 400px;
   @media screen and (min-width: 1024px) {
-    max-width: 600px;
+    max-width: 550px;
   }
 `;

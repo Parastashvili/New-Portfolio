@@ -16,6 +16,7 @@ import Reveal from "../components/Reveal";
 import Techstack from "../components/TechStack";
 function App() {
   const [text, setText] = useState("");
+  const [view, setView] = useState(1);
   const words = [
     "Frontend Engineer",
     "Web Designer",
@@ -45,23 +46,20 @@ function App() {
               );
             }
           }, 100);
-        }, 555000);
+        }, 5000);
       }
     }, 100);
     return () => {
       clearInterval(typingInterval);
     };
   }, [currentWordIndex]);
-
   useEffect(() => {
     const paragraph = document.getElementById("colorful-paragraph");
     const words = paragraph.innerText.split(" ");
-
     const getRandomColor = () => {
       const colors = ["#ffffff", "#F2672E"];
       return colors[Math.floor(Math.random() * colors.length)];
     };
-
     const updateWordColor = () => {
       paragraph.innerHTML = words
         .map(
@@ -69,10 +67,8 @@ function App() {
         )
         .join("");
     };
-
     updateWordColor();
   }, []);
-
   return (
     <Main>
       <img className="asset white" src={WhiteAsset} alt="" />
@@ -81,6 +77,19 @@ function App() {
       <img className="topEclipse" src={topEclipse} alt="Eclipse" />
       <img className="bottomEclipse" src={bottomEclipse} alt="Eclipse" />
       <Inner>
+        <DeskBar>
+          <ul>
+            <li>
+              <p>Projects</p>
+            </li>
+            <li>
+              <p>Tech Stack</p>
+            </li>
+            <li>
+              <p>About</p>
+            </li>
+          </ul>
+        </DeskBar>
         <img
           onClick={() => {
             console.log("yes");
@@ -95,7 +104,7 @@ function App() {
           </Reveal>
           <Reveal>
             <p className="second">
-              I'm Levan Parastashvili, a{" "}
+              I'm Levan Parastashvili, a <br />
               <span className="frontend">{text}</span> 💻🌱{" "}
             </p>
           </Reveal>
@@ -234,7 +243,9 @@ const Inner = styled.div`
   width: calc(100% - 60px);
   @media screen and (min-width: 1024px) {
     display: flex;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 120px);
+    max-width: 1440px;
+    max-height: 700px;
     #projects {
       display: none;
     }
@@ -294,7 +305,7 @@ const Section = styled.div`
     .frontend {
       font-size: 18px;
       font-weight: 700;
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.04rem;
       background-image: linear-gradient(
         to right,
         #ffff00,
@@ -398,5 +409,53 @@ const About = styled.p`
   transition: all 0.5s ease-in-out;
   &:hover {
     scale: 1.05;
+  }
+`;
+const DeskBar = styled.div`
+  position: absolute;
+  transform: translate(-50%, 0%);
+  left: 50%;
+  ul {
+    display: flex;
+    gap: 20px;
+    li {
+      p {
+        color: #f9fafb;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: 20px;
+        user-select: none;
+        cursor: pointer;
+        position: relative;
+        letter-spacing: 0.08rem;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          border-radius: 10px;
+          background: linear-gradient(
+            to right,
+            rgba(255, 255, 0, 0.7),
+            rgba(255, 43, 43, 0.7) 100%
+          );
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
   }
 `;

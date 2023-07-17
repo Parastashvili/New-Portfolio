@@ -124,6 +124,7 @@ const Container = styled.div`
         color: #f9fafb;
         font-family: Poppins;
         font-style: normal;
+        text-transform: capitalize;
       }
       h1 {
         font-size: 18px;

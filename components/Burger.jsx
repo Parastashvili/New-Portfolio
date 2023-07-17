@@ -100,9 +100,8 @@ const NavBar = styled.ul`
     left: 0;
     width: 0;
     height: 3px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
-
   li:hover {
     background-position: 0;
   }
@@ -115,8 +114,8 @@ const NavBar = styled.ul`
     transform: translateX(0px);
     background: linear-gradient(
       136deg,
-      rgba(27, 26, 26, 0.8) 0%,
-      rgba(38, 38, 38, 0.95) 100%
+      rgba(27, 26, 26, 0.9) 0%,
+      rgba(38, 38, 38, 1) 100%
     );
     opacity: 1;
     border-radius: 10px 0px 0px 10px;
@@ -124,9 +123,12 @@ const NavBar = styled.ul`
   }
 `;
 const Contact = styled.div`
-  margin-top: 10px;
-  background: linear-gradient(to right, #ffff00, #ff2b2b 100%);
-  opacity: 0.8;
+  margin-top: 15px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 0, 0.7),
+    rgba(255, 43, 43, 0.7) 100%
+  );
   border-radius: 5px;
   width: 100%;
   padding: 0px;
@@ -134,7 +136,8 @@ const Contact = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 0px;
+    gap: 10px;
+    padding: 0 10px;
     li {
       padding: 0px;
       &:hover {

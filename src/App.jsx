@@ -52,6 +52,27 @@ function App() {
       clearInterval(typingInterval);
     };
   }, [currentWordIndex]);
+
+  useEffect(() => {
+    const paragraph = document.getElementById("colorful-paragraph");
+    const words = paragraph.innerText.split(" ");
+
+    const getRandomColor = () => {
+      const colors = ["#ffffff", "#F2672E"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    };
+
+    const updateWordColor = () => {
+      paragraph.innerHTML = words
+        .map(
+          (word) => `<span style="color: ${getRandomColor()}">${word} </span>`
+        )
+        .join("");
+    };
+
+    updateWordColor();
+  }, []);
+
   return (
     <Main>
       <img className="asset white" src={WhiteAsset} alt="" />
@@ -60,7 +81,6 @@ function App() {
       <img className="topEclipse" src={topEclipse} alt="Eclipse" />
       <img className="bottomEclipse" src={bottomEclipse} alt="Eclipse" />
       <Inner>
-        <BurgerMenu />
         <img
           onClick={() => {
             console.log("yes");
@@ -130,14 +150,25 @@ function App() {
           <Techstack level={5} name="Firebase" />
         </Tech>
         <Reveal>
-          <SectionHeader name="Skills" />
-        </Reveal>
-        <Reveal>
           <SectionHeader name="About" />
         </Reveal>
-        <Reveal>
-          <Anime />
-        </Reveal>
+        <About id="colorful-paragraph">
+          I transitioned from e-commerce category management to front-end
+          engineering, following my passion for development. In just one month,
+          I built multiple websites using HTML, CSS, and JavaScript, showcasing
+          my skills in page structure, responsive design, and Git collaboration.
+          I also created engaging games like Memory and Tic Tac Toe. I quickly
+          embraced CSS frameworks like Tailwind and Bootstrap, streamlining my
+          workflow and creating visually stunning user interfaces. I expanded my
+          knowledge with React and TypeScript, focusing on daily practice to
+          hone my skills and build a strong portfolio. As a passionate front-end
+          engineer, I'm driven to create intuitive, user-centric experiences.
+          With a solid foundation and a thirst for innovation, I'm eager to
+          contribute my expertise to dynamic and collaborative development
+          teams, crafting impactful web experiences.
+        </About>
+        <Anime />
+        <BurgerMenu />
       </Inner>
       {/* <MouseTracker /> */}
     </Main>
@@ -290,5 +321,25 @@ const Tech = styled.div`
   display: grid;
   @media screen and (min-width: 550px) {
     grid-template-columns: 1fr 1fr;
+  }
+`;
+const About = styled.p`
+  text-transform: capitalize;
+  opacity: 1;
+  margin: auto;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+  color: #f9fafb;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    scale: 1.05;
   }
 `;

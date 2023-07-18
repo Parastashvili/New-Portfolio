@@ -15,7 +15,7 @@ export default () => {
     autoplay: true,
     pauseOnHover: true,
     resetProgress: false,
-    height: "15rem",
+    height: "25rem",
   };
   return (
     <Splide
@@ -38,10 +38,8 @@ export default () => {
                   }}
                 >
                   <div
+                    className="slid"
                     style={{
-                      width: "100%",
-                      maxWidth: "350px",
-                      height: "200px",
                       backgroundImage: `url(${item.img})`,
                       backgroundPosition: "center",
                       backgroundSize: "cover",
@@ -96,6 +94,15 @@ export default () => {
 const Container = styled.div`
   width: 100%;
   div {
+    .slid {
+      width: 100%;
+      max-width: 400px;
+      height: 280px;
+      @media screen and (min-width: 1024px) {
+        max-width: 600px;
+        height: 360px;
+      }
+    }
     position: relative;
     &:hover {
       .hover {
@@ -117,6 +124,9 @@ const Container = styled.div`
       border-radius: 5px;
       flex-direction: column;
       gap: 20px;
+      @media screen and (min-width: 1024px) {
+        gap: 50px;
+      }
       h1,
       p {
         width: 70%;
@@ -130,15 +140,24 @@ const Container = styled.div`
         font-size: 18px;
         font-weight: 700;
         letter-spacing: 0.03rem;
+        @media screen and (min-width: 1024px) {
+          font-size: 33px;
+        }
       }
       p {
         font-size: 14px;
         font-weight: 300;
         letter-spacing: 0.02rem;
+        @media screen and (min-width: 1024px) {
+          font-size: 18px;
+        }
       }
       div {
         display: flex;
         gap: 10px;
+        @media screen and (min-width: 1024px) {
+          gap: 30px;
+        }
         a {
           button {
             background-color: #ffffff;
@@ -151,7 +170,11 @@ const Container = styled.div`
             font-size: 14px;
             font-weight: 600;
             letter-spacing: 0.02rem;
+            padding: 5px 10px;
             opacity: 0.8;
+            @media screen and (min-width: 1024px) {
+              font-size: 18px;
+            }
             &:hover {
               opacity: 1;
               cursor: pointer;
@@ -160,6 +183,10 @@ const Container = styled.div`
             img {
               width: 20px;
               margin-left: 5px;
+              @media screen and (min-width: 1024px) {
+                width: 30px;
+                margin-left: 15px;
+              }
             }
           }
         }

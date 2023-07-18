@@ -18,4 +18,7 @@ const Name = styled.h1`
   &:hover {
     letter-spacing: 0.2rem;
   }
+  @media screen and (min-width: 1024px) {
+    margin-top: 60px;
+  }
 `;

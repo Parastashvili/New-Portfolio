@@ -20,13 +20,13 @@ export default function Anime() {
   };
   return (
     <>
-        <Cont>
-          <Img
-            src={Animex}
-            alt="anime"
-            style={{ transform: calculateImagePosition() }}
-          />
-        </Cont>
+      <Cont>
+        <Img
+          src={Animex}
+          alt="anime"
+          style={{ transform: calculateImagePosition() }}
+        />
+      </Cont>
     </>
   );
 }
@@ -36,11 +36,18 @@ const Cont = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    top: 50%;
+  }
 `;
 const Img = styled.img`
   width: 100%;
   max-width: 400px;
   @media screen and (min-width: 1024px) {
     max-width: 550px;
+    position: absolute;
+    right: 100px;
+    z-index: -1;
   }
 `;

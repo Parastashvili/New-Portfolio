@@ -147,17 +147,13 @@ function App() {
         )}
         {(view == 2 || innerWidth < 1024) && (
           <div id="projects">
-            <Reveal>
-              <SectionHeader name="Projects" />
-            </Reveal>
+            <SectionHeader name="Projects" />
             <Slider />
           </div>
         )}
         {(view == 3 || innerWidth < 1024) && (
           <div id="tech">
-            <Reveal>
-              <SectionHeader name="Tech Stack" />
-            </Reveal>
+            <SectionHeader name="Tech Stack" />
             <Tech>
               <Techstack level={8} name="HTML5" />
               <Techstack level={7} name="CSS3 / SASS / SCSS" />
@@ -182,9 +178,7 @@ function App() {
         )}
         {(view == 4 || innerWidth < 1024) && (
           <div id="about">
-            <Reveal>
-              <SectionHeader name="About" />
-            </Reveal>
+            <SectionHeader name="About" />
             <About id="colorful-paragraph">
               I transitioned from e-commerce category management to front-end
               engineering, following my passion for development. In just one
@@ -202,8 +196,10 @@ function App() {
               impactful web experiences.
             </About>
           </div>
+        )}{" "}
+        {(view == 1 || innerWidth < 1024 || view == 4 || innerWidth < 1024) && (
+          <Anime />
         )}
-        {(view == 1 || view == 4) && <Anime />}
         <BurgerMenu />
       </Inner>
       {/* <MouseTracker /> */}
@@ -251,7 +247,7 @@ const Main = styled.div`
   }
 `;
 const Inner = styled.div`
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   border-radius: 24px;
   background: linear-gradient(
@@ -262,10 +258,10 @@ const Inner = styled.div`
   backdrop-filter: blur(15px);
   width: calc(100% - 60px);
   @media screen and (min-width: 1024px) {
-    display: flex;
-    height: calc(100vh - 120px);
-    max-width: 1440px;
-    max-height: 700px;
+    height: calc(100vh - 220px);
+    max-width: 1240px;
+    max-height: 600px;
+    padding: 50px;
   }
   .logo {
     width: 40px;
@@ -277,6 +273,9 @@ const Inner = styled.div`
     &:hover {
       scale: 0.9;
       opacity: 0.6;
+    }
+    @media screen and (min-width: 1024px) {
+      padding: 50px;
     }
   }
   .text {
@@ -340,9 +339,11 @@ const Section = styled.div`
     font-weight: 300;
     line-height: normal;
     letter-spacing: 0.02rem;
+
     @media screen and (min-width: 1024px) {
       font-size: 16px;
       letter-spacing: 0.07rem;
+      max-width: 600px;
     }
   }
 `;
@@ -420,6 +421,18 @@ const About = styled.p`
   transition: all 0.5s ease-in-out;
   &:hover {
     scale: 1.05;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-left: 0px;
+    text-align: left;
+    max-width: 600px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    &:hover {
+      scale: 1;
+      opacity: 0.8;
+    }
   }
 `;
 const DeskBar = styled.div`

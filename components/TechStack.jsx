@@ -37,7 +37,7 @@ export default function Techstack(props) {
         />
         <div
           data-aos="fade-right"
-          data-aos-offset="300"
+          data-aos-offset="50"
           data-aos-easing="ease-in-sine"
           style={divStyle}
           className="filled"

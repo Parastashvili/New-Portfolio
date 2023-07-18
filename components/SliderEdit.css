@@ -15,3 +15,9 @@
   transform: scale(1.4);
   z-index: 1;
 }
+.splide__arrow svg {
+  fill: #ef6706;
+  height: 1.5em;
+  transition: fill 0.2s linear;
+  width: 2em;
+}

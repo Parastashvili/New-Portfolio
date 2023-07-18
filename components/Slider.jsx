@@ -2,13 +2,12 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import data from "../src/data/data";
 import "@splidejs/react-splide/css/skyblue";
 import { styled } from "styled-components";
-import next from "../src/assets/next.png";
-import prev from "../src/assets/prev.png";
 import "./SliderEdit.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import link from "../src/assets/link.gif";
 import githubs from "../src/assets/githubs.gif";
 export default () => {
+  const windowWidth = window.innerWidth < 1024;
   const options = {
     type: "loop",
     gap: "2rem",
@@ -17,6 +16,9 @@ export default () => {
     resetProgress: false,
     height: "25rem",
   };
+  if (windowWidth) {
+    options.height = "20rem";
+  }
   return (
     <Splide
       options={options}
@@ -72,10 +74,6 @@ export default () => {
             </SplideSlide>
           ))}
         </SplideTrack>
-        <div className="splide__arrows">
-          <button className="splide__arrow splide__arrow--next"></button>
-          <button className="splide__arrow splide__arrow--prev"></button>
-        </div>
       </div>
       <div className="splide__progress">
         <div

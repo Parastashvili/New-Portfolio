@@ -19,13 +19,15 @@ export default function Anime() {
     return `translate(${offsetX}px, ${offsetY}px)`;
   };
   return (
-    <Cont>
-      <Img
-        src={Animex}
-        alt="anime"
-        style={{ transform: calculateImagePosition() }}
-      />
-    </Cont>
+    <>
+        <Cont>
+          <Img
+            src={Animex}
+            alt="anime"
+            style={{ transform: calculateImagePosition() }}
+          />
+        </Cont>
+    </>
   );
 }
 const Cont = styled.div`

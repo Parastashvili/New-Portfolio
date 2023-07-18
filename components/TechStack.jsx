@@ -33,6 +33,7 @@ export default function Techstack(props) {
           step={1}
           min={1}
           max={10}
+          readOnly
         />
         <div
           data-aos="fade-right"

@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import topEclipse from "./assets/svg/Eclipse.svg";
 import bottomEclipse from "./assets/svg/Eclipse2.svg";
 import Anime from "../components/Anime";
@@ -16,13 +16,7 @@ import Reveal from "../components/Reveal";
 import Techstack from "../components/TechStack";
 function App() {
   const [text, setText] = useState("");
-  const [view, setView] = useState(1);
-  const words = [
-    "Frontend Engineer",
-    "Web Designer",
-    "Crypto Enthusiast",
-    "Blockchain Enthusiast",
-  ];
+  const words = ["Frontend Engineer", "Web Designer"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   useEffect(() => {
     const word = words[currentWordIndex];
@@ -53,22 +47,26 @@ function App() {
       clearInterval(typingInterval);
     };
   }, [currentWordIndex]);
+  const [view, setView] = useState(1);
   useEffect(() => {
     const paragraph = document.getElementById("colorful-paragraph");
-    const words = paragraph.innerText.split(" ");
-    const getRandomColor = () => {
-      const colors = ["#ffffff", "#F2672E"];
-      return colors[Math.floor(Math.random() * colors.length)];
-    };
-    const updateWordColor = () => {
-      paragraph.innerHTML = words
-        .map(
-          (word) => `<span style="color: ${getRandomColor()}">${word} </span>`
-        )
-        .join("");
-    };
-    updateWordColor();
-  }, []);
+    if (paragraph) {
+      const words = paragraph.innerText.split(" ");
+      const getRandomColor = () => {
+        const colors = ["#ffffff", "#F2672E"];
+        return colors[Math.floor(Math.random() * colors.length)];
+      };
+      const updateWordColor = () => {
+        paragraph.innerHTML = words
+          .map(
+            (word) => `<span style="color: ${getRandomColor()}">${word} </span>`
+          )
+          .join("");
+      };
+      updateWordColor();
+    }
+  }, [view]);
+
   return (
     <Main>
       <img className="asset white" src={WhiteAsset} alt="" />
@@ -79,111 +77,133 @@ function App() {
       <Inner>
         <DeskBar>
           <ul>
-            <li>
+            <li
+              onClick={() => {
+                setView(2);
+              }}
+            >
               <p>Projects</p>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                setView(3);
+              }}
+            >
               <p>Tech Stack</p>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                setView(4);
+              }}
+            >
               <p>About</p>
             </li>
           </ul>
         </DeskBar>
         <img
           onClick={() => {
-            console.log("yes");
+            setView(1);
           }}
           className="logo"
           src={logo}
           alt="logo"
         />
-        <Section>
-          <Reveal>
-            <p className="first">Hi there! 👋 </p>{" "}
-          </Reveal>
-          <Reveal>
-            <p className="second">
-              I'm Levan Parastashvili, a <br />
-              <span className="frontend">{text}</span> 💻🌱{" "}
-            </p>
-          </Reveal>
-          <Reveal>
-            <p className="third">
-              I have a deep passion for coding and am always looking for new
-              challenges to improve my skills and knowledge. 🤓💪 I believe that
-              coding is not just a skill, but a mindset that allows me to solve
-              problems and create innovative solutions. My approach to coding is
-              to combine creativity and technical skills to deliver exceptional
-              results. 🚀💡 Feel free to explore my profile and projects, and
-              don't hesitate to get in touch with me for any collaboration or
-              discussion.
-            </p>
-          </Reveal>
-          <Reveal>
-            <Resume
-              href="https://drive.google.com/file/d/1jtirsBYt9rUPGcdlvG2-Fx-TMvKfL_s0/view"
-              target="_blank"
-            >
-              <p className="mobile">Download CV</p>
-              <p className="desktop">Let's make great things together! 🤝🌟</p>
-              <img className="download" src={down} alt="" />
-            </Resume>
-          </Reveal>
-        </Section>
-        <div id="projects">
-          <Reveal>
-            <SectionHeader name="Projects" />
-          </Reveal>
-          <Slider />
-        </div>
-        <div id="tech">
-          <Reveal>
-            <SectionHeader name="Tech Stack" />
-          </Reveal>
-          <Tech>
-            <Techstack level={8} name="HTML5" />
-            <Techstack level={7} name="CSS3 / SASS / SCSS" />
-            <Techstack level={8} name="Styled Components" />
-            <Techstack level={5} name="Bootstrap & Tailwind" />
-            <Techstack level={7} name="Javascript (Vanilla)" />
-            <Techstack level={6} name="Typescript" />
-            <Techstack level={7} name="React" />
-            <Techstack level={6} name="jQuerry" />
-            <Techstack level={8} name="FlexBox Layout" />
-            <Techstack level={6} name="React Spring" />
-            <Techstack level={6} name="MUI" />
-            <Techstack level={6} name="Framer Motion" />
-            <Techstack level={7} name="Ant Desing" />
-            <Techstack level={7} name="Splide.js" />
-            <Techstack level={6} name="Grid Layout" />
-            <Techstack level={7} name="Git / Github" />
-            <Techstack level={5} name="Node.js" />
-            <Techstack level={5} name="Firebase" />
-          </Tech>
-        </div>
-        <div id="about">
-          <Reveal>
-            <SectionHeader name="About" />
-          </Reveal>
-          <About id="colorful-paragraph">
-            I transitioned from e-commerce category management to front-end
-            engineering, following my passion for development. In just one
-            month, I built multiple websites using HTML, CSS, and JavaScript,
-            showcasing my skills in page structure, responsive design, and Git
-            collaboration. I also created engaging games like Memory and Tic Tac
-            Toe. I quickly embraced CSS frameworks like Tailwind and Bootstrap,
-            streamlining my workflow and creating visually stunning user
-            interfaces. I expanded my knowledge with React and TypeScript,
-            focusing on daily practice to hone my skills and build a strong
-            portfolio. As a passionate front-end engineer, I'm driven to create
-            intuitive, user-centric experiences. With a solid foundation and a
-            thirst for innovation, I'm eager to contribute my expertise to
-            dynamic and collaborative development teams, crafting impactful web
-            experiences.
-          </About>
-        </div>
-        <Anime />
+        {(view == 1 || innerWidth < 1024) && (
+          <Section id="welcome">
+            <Reveal>
+              <p className="first">Hi there! 👋 </p>{" "}
+            </Reveal>
+            <Reveal>
+              <p className="second">
+                I'm Levan Parastashvili, a <br />
+                <span className="frontend">{text}</span> 💻🌱{" "}
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className="third">
+                I have a deep passion for coding and am always looking for new
+                challenges to improve my skills and knowledge. 🤓💪 I believe
+                that coding is not just a skill, but a mindset that allows me to
+                solve problems and create innovative solutions. My approach to
+                coding is to combine creativity and technical skills to deliver
+                exceptional results. 🚀💡 Feel free to explore my profile and
+                projects, and don't hesitate to get in touch with me for any
+                collaboration or discussion.
+              </p>
+            </Reveal>
+            <Reveal>
+              <Resume
+                href="https://drive.google.com/file/d/1jtirsBYt9rUPGcdlvG2-Fx-TMvKfL_s0/view"
+                target="_blank"
+              >
+                <p className="mobile">Download CV</p>
+                <p className="desktop">
+                  Let's make great things together! 🤝🌟
+                </p>
+                <img className="download" src={down} alt="" />
+              </Resume>
+            </Reveal>
+          </Section>
+        )}
+        {(view == 2 || innerWidth < 1024) && (
+          <div id="projects">
+            <Reveal>
+              <SectionHeader name="Projects" />
+            </Reveal>
+            <Slider />
+          </div>
+        )}
+        {(view == 3 || innerWidth < 1024) && (
+          <div id="tech">
+            <Reveal>
+              <SectionHeader name="Tech Stack" />
+            </Reveal>
+            <Tech>
+              <Techstack level={8} name="HTML5" />
+              <Techstack level={7} name="CSS3 / SASS / SCSS" />
+              <Techstack level={8} name="Styled Components" />
+              <Techstack level={5} name="Bootstrap & Tailwind" />
+              <Techstack level={7} name="Javascript (Vanilla)" />
+              <Techstack level={6} name="Typescript" />
+              <Techstack level={7} name="React" />
+              <Techstack level={6} name="jQuerry" />
+              <Techstack level={8} name="FlexBox Layout" />
+              <Techstack level={6} name="React Spring" />
+              <Techstack level={6} name="MUI" />
+              <Techstack level={6} name="Framer Motion" />
+              <Techstack level={7} name="Ant Desing" />
+              <Techstack level={7} name="Splide.js" />
+              <Techstack level={6} name="Grid Layout" />
+              <Techstack level={7} name="Git / Github" />
+              <Techstack level={5} name="Node.js" />
+              <Techstack level={5} name="Firebase" />
+            </Tech>
+          </div>
+        )}
+        {(view == 4 || innerWidth < 1024) && (
+          <div id="about">
+            <Reveal>
+              <SectionHeader name="About" />
+            </Reveal>
+            <About id="colorful-paragraph">
+              I transitioned from e-commerce category management to front-end
+              engineering, following my passion for development. In just one
+              month, I built multiple websites using HTML, CSS, and JavaScript,
+              showcasing my skills in page structure, responsive design, and Git
+              collaboration. I also created engaging games like Memory and Tic
+              Tac Toe. I quickly embraced CSS frameworks like Tailwind and
+              Bootstrap, streamlining my workflow and creating visually stunning
+              user interfaces. I expanded my knowledge with React and
+              TypeScript, focusing on daily practice to hone my skills and build
+              a strong portfolio. As a passionate front-end engineer, I'm driven
+              to create intuitive, user-centric experiences. With a solid
+              foundation and a thirst for innovation, I'm eager to contribute my
+              expertise to dynamic and collaborative development teams, crafting
+              impactful web experiences.
+            </About>
+          </div>
+        )}
+        {(view == 1 || view == 4) && <Anime />}
         <BurgerMenu />
       </Inner>
       {/* <MouseTracker /> */}
@@ -246,15 +266,6 @@ const Inner = styled.div`
     height: calc(100vh - 120px);
     max-width: 1440px;
     max-height: 700px;
-    #projects {
-      display: none;
-    }
-    #tech {
-      display: none;
-    }
-    #about {
-      display: none;
-    }
   }
   .logo {
     width: 40px;
@@ -412,6 +423,10 @@ const About = styled.p`
   }
 `;
 const DeskBar = styled.div`
+  display: none;
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
   position: absolute;
   transform: translate(-50%, 0%);
   left: 50%;

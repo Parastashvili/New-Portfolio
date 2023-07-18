@@ -14,6 +14,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "../components/Slider";
 import Reveal from "../components/Reveal";
 import Techstack from "../components/TechStack";
+import 'transition-style';
 function App() {
   const [text, setText] = useState("");
   const words = ["Frontend Engineer", "Web Designer"];

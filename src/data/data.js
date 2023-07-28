@@ -1,6 +1,6 @@
 const data = [
   {
-    id: 1,
+    id: 50,
     img: "https://i.postimg.cc/QxpNqvL4/interactive-card.jpg",
     name: "Interactive Card",
     text: "interactive card details user friendly site with react and typescipt. UI/UX",
@@ -9,7 +9,7 @@ const data = [
     liveLink: "https://interactive-card-details-react-two.vercel.app/",
   },
   {
-    id: 2,
+    id: 49,
     img: "https://i.postimg.cc/XJmN2b7h/github-search.jpg",
     name: "Github search",
     text: "Github user search site with react and typescipt. day and night modes. local storage saving and API integration.",
@@ -17,7 +17,7 @@ const data = [
     liveLink: "https://github-user-search-react-sable.vercel.app/",
   },
   {
-    id: 3,
+    id: 48,
     img: "https://i.postimg.cc/8kxs4h75/faq.webp",
     name: "FAQ accordion",
     text: "Faq accordio site with react and typescipt use is able to see only one question at time. UI/UX",
@@ -25,7 +25,7 @@ const data = [
     liveLink: "https://faq-accordion-card-react-chi.vercel.app/",
   },
   {
-    id: 4,
+    id: 47,
     img: "https://i.postimg.cc/nrqx09Wj/todo.png",
     name: "TO-DO APP",
     text: "To do app with react, user friendly.",
@@ -33,7 +33,7 @@ const data = [
     liveLink: "https://to-do-react-roan-nine.vercel.app/",
   },
   {
-    id: 5,
+    id: 46,
     img: "https://i.postimg.cc/d1kwZxm9/tipcalc.webp",
     name: "tip calculator",
     text: "tip calculator app count tip amount by person. site has several mandatory fileds",
@@ -41,7 +41,7 @@ const data = [
     liveLink: "https://tip-calculator-react-tau.vercel.app/",
   },
   {
-    id: 6,
+    id: 45,
     img: "https://i.postimg.cc/d00qw1hp/rating.webp",
     name: "rating app",
     text: "interactive rating app to vote  how did we go ? user frinedly. UI/UX",
@@ -50,7 +50,7 @@ const data = [
     liveLink: "https://interactive-rating-component-react-green.vercel.app/",
   },
   {
-    id: 7,
+    id: 44,
     img: "https://i.postimg.cc/FKPHLcth/nft.webp",
     name: "NFT card",
     text: "nft card preview get information about nft owner and creator.",
@@ -58,7 +58,7 @@ const data = [
     liveLink: "https://nft-card-preview-react-ten.vercel.app/",
   },
   {
-    id: 8,
+    id: 43,
     img: "https://i.postimg.cc/65s5ntP4/invoice-app.jpg",
     name: "Invoice app",
     text: "invoice app. create/remove/update/delete invoices in backend. firebase is used to store all data. use profile picture to reset ivnoices",
@@ -66,7 +66,7 @@ const data = [
     liveLink: "https://invoice-app-flame-eta.vercel.app/",
   },
   {
-    id: 9,
+    id: 42,
     img: "https://i.postimg.cc/c6qq314x/calculator.webp",
     name: "calculator",
     text: "online calculatore in 3 diffrenet colors ",
@@ -74,7 +74,7 @@ const data = [
     liveLink: "https://parastashvili.github.io/Calculator-app/",
   },
   {
-    id: 10,
+    id: 41,
     img: "https://i.postimg.cc/BnB6JkML/memory.webp",
     name: "momory game",
     text: "memory game for up to 4 players and 2 different themes 4x4 or 6x6 grid size",
@@ -82,7 +82,7 @@ const data = [
     liveLink: "https://parastashvili.github.io/Memory-Game/",
   },
   {
-    id: 11,
+    id: 40,
     img: "https://i.postimg.cc/7LQq6k76/tictactoe.webp",
     name: "tic tac toe",
     text: "tic tac toe game for two player. playey vs player or player vs cpu. random algorithm not mini-max",
@@ -90,7 +90,7 @@ const data = [
     liveLink: "https://parastashvili.github.io/Tic-Tac-Toe/",
   },
   {
-    id: 12,
+    id: 39,
     img: "https://i.postimg.cc/C1zLH1Yk/passgenerator.webp",
     name: "pass generator",
     text: "password generator app generate and compy random password with your selected criteria",
@@ -98,7 +98,7 @@ const data = [
     liveLink: "https://parastashvili.github.io/Password-Generator/",
   },
   {
-    id: 13,
+    id: 38,
     img: "https://i.postimg.cc/QNKdFHfr/photosnap.webp",
     name: "photosnap",
     text: "photo snap multi page app. this site was group project where i wrote codes for first and last pages",
@@ -106,7 +106,7 @@ const data = [
     liveLink: "https://parastashvili.github.io/Photosnap-multi-page/",
   },
   {
-    id: 14,
+    id: 37,
     img: "https://i.postimg.cc/vm8mThNP/notification.webp",
     name: "notification",
     text: "notification page. mark notification as read or mark as unread",
@@ -114,7 +114,7 @@ const data = [
     liveLink: "https://parastashvili.github.io/Notifications-Page/",
   },
   {
-    id: 15,
+    id: 36,
     img: "https://i.postimg.cc/pXXXFyFF/Screenshot-2023-07-28-171643.png",
     name: "Redberry Knight",
     text: "Redberry Knight Cup Registration from",
@@ -123,7 +123,7 @@ const data = [
     liveLink: "https://red-berry-knight-cup-registration.vercel.app/",
   },
   {
-    id: 16,
+    id: 35,
     img: "https://i.postimg.cc/kg2JTZwM/Screenshot-2023-07-28-171636.png",
     name: "Iberia Refreshments",
     text: "Iberia refreshments company portfolio",
@@ -131,7 +131,7 @@ const data = [
     liveLink: "https://iberia-refreshments-react-ts.vercel.app/",
   },
   {
-    id: 17,
+    id: 34,
     img: "https://i.postimg.cc/kX1MF9Qh/Screenshot-2023-07-28-171628.png",
     name: "Restaurant Menu App",
     text: "This is idea about restaurant menu. should be used as a sturtup idea",

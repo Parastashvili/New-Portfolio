@@ -14,7 +14,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "../components/Slider";
 import Reveal from "../components/Reveal";
 import Techstack from "../components/TechStack";
-import 'transition-style';
+import "transition-style";
 function App() {
   const [text, setText] = useState("");
   const words = ["Frontend Engineer", "Web Designer"];
@@ -70,6 +70,12 @@ function App() {
 
   return (
     <Main>
+      <OldVersion
+        href="https://parastashvili-portfolio-react-ts-xd2s.vercel.app/"
+        target="_blank"
+      >
+        Old Version
+      </OldVersion>
       <img className="asset white" src={WhiteAsset} alt="" />
       <img className="asset blue" src={BlueAsset} alt="" />
       <img className="asset yellow" src={YelloAsset} alt="" />
@@ -486,5 +492,22 @@ const DeskBar = styled.div`
         }
       }
     }
+  }
+`;
+const OldVersion = styled.a`
+  position: absolute;
+  bottom: 20px;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.1rem;
+  color: #f9fafb;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    letter-spacing: 0.15rem;
   }
 `;

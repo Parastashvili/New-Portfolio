@@ -113,6 +113,31 @@ const data = [
     githubLink: "https://github.com/Parastashvili/Notifications-Page",
     liveLink: "https://parastashvili.github.io/Notifications-Page/",
   },
+  {
+    id: 15,
+    img: "https://i.postimg.cc/pXXXFyFF/Screenshot-2023-07-28-171643.png",
+    name: "Redberry Knight",
+    text: "Redberry Knight Cup Registration from",
+    githubLink:
+      "https://github.com/Parastashvili/RedBerry-Knight-Cup-Registration",
+    liveLink: "https://red-berry-knight-cup-registration.vercel.app/",
+  },
+  {
+    id: 16,
+    img: "https://i.postimg.cc/kg2JTZwM/Screenshot-2023-07-28-171636.png",
+    name: "Iberia Refreshments",
+    text: "Iberia refreshments company portfolio",
+    githubLink: "https://github.com/Parastashvili/Iberia-Refreshments-React-TS",
+    liveLink: "https://iberia-refreshments-react-ts.vercel.app/",
+  },
+  {
+    id: 17,
+    img: "https://i.postimg.cc/kX1MF9Qh/Screenshot-2023-07-28-171628.png",
+    name: "Restaurant Menu App",
+    text: "This is idea about restaurant menu. should be used as a sturtup idea",
+    githubLink: "https://github.com/Parastashvili/Lista-App",
+    liveLink: "https://lista-app-rho.vercel.app/",
+  },
 ];
 
 export default data;

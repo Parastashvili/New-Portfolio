@@ -140,7 +140,7 @@ function App() {
             </Reveal>
             <Reveal>
               <Resume
-                href="https://drive.google.com/file/d/1jtirsBYt9rUPGcdlvG2-Fx-TMvKfL_s0/view"
+                href="https://drive.google.com/file/d/1jtirsBYt9rUPGcdlvG2-Fx-TMvKfL_s0/view?usp=sharing"
                 target="_blank"
               >
                 <p className="mobile">Download CV</p>

@@ -1,19 +1,27 @@
 const data = [
   {
+    id: 1,
+    img: "https://i.postimg.cc/0NnLyTkq/Screenshot-2023-08-17-100035.png",
+    name: "Rentio tools rental",
+    text: "This is a startup idea, on production, still working procces",
+    githubLink: "https://github.com/Parastashvili/Rentio-app",
+    liveLink: "https://rentio-app.vercel.app/",
+  },
+  {
+    id: 2,
+    img: "https://i.postimg.cc/RhTBwW9N/Screenshot-2023-08-17-100433.png",
+    name: "Rentio Admin Dashboard",
+    text: "This is a admin dashboard for Rentio rental application. connected with firebase backend and takes data from",
+    githubLink: "https://github.com/Parastashvili/Admin-Dashboard",
+    liveLink: "https://admin-dashboard-topaz-nu.vercel.app/login",
+  },
+  {
     id: 34,
     img: "https://i.postimg.cc/kX1MF9Qh/Screenshot-2023-07-28-171628.png",
     name: "Restaurant Menu App",
     text: "This is idea about restaurant menu. should be used as a sturtup idea",
     githubLink: "https://github.com/Parastashvili/Lista-App",
     liveLink: "https://lista-app-rho.vercel.app/",
-  },
-  {
-    id: 43,
-    img: "https://i.postimg.cc/65s5ntP4/invoice-app.jpg",
-    name: "Invoice app",
-    text: "invoice app. create/remove/update/delete invoices in backend. firebase is used to store all data. use profile picture to reset ivnoices",
-    githubLink: "https://github.com/Parastashvili/Invoice-App",
-    liveLink: "https://invoice-app-flame-eta.vercel.app/",
   },
   {
     id: 35,
@@ -24,9 +32,17 @@ const data = [
     liveLink: "https://iberia-refreshments-react-ts.vercel.app/",
   },
   {
+    id: 43,
+    img: "https://i.postimg.cc/65s5ntP4/invoice-app.jpg",
+    name: "Invoice app",
+    text: "invoice app. create/remove/update/delete invoices in backend. firebase is used to store all data. use profile picture to reset ivnoices",
+    githubLink: "https://github.com/Parastashvili/Invoice-App",
+    liveLink: "https://invoice-app-flame-eta.vercel.app/",
+  },
+  {
     id: 41,
     img: "https://i.postimg.cc/BnB6JkML/memory.webp",
-    name: "momory game",
+    name: "Memory game",
     text: "memory game for up to 4 players and 2 different themes 4x4 or 6x6 grid size",
     githubLink: "https://github.com/Parastashvili/Memory-Game",
     liveLink: "https://parastashvili.github.io/Memory-Game/",
@@ -34,7 +50,7 @@ const data = [
   {
     id: 40,
     img: "https://i.postimg.cc/7LQq6k76/tictactoe.webp",
-    name: "tic tac toe",
+    name: "Tic tac toe",
     text: "tic tac toe game for two player. playey vs player or player vs cpu. random algorithm not mini-max",
     githubLink: "https://github.com/Parastashvili/Tic-Tac-Toe",
     liveLink: "https://parastashvili.github.io/Tic-Tac-Toe/",
